@@ -1,0 +1,20 @@
+{% extends 'appticket/base.html' %}
+
+{% block title %} LIST OF TICKETS {% endblock %}
+{% block subtitle %} Find below a list of all the tickets created. {% endblock %}
+
+{% block button %}
+<a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'createticket'%}"> Create Ticket </a>
+<a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'ticketsearch'%}"> Search Ticket </a>
+{% endblock %}
+
+{% block lists %} 
+
+{% for ticket in tickets %}
+
+    <p>Ticket ID: {{ticket.id}} - Date Open: {{ticket.date_open}} - Status: {{ticket.status}} - Category: {{ticket.category}} - Description: {{ticket.description}}</p> <!-- Make a bullet list-->
+    
+{% endfor %}
+
+{% endblock %}
+

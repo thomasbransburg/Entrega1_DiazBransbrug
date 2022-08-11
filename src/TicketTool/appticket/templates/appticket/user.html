@@ -1,0 +1,21 @@
+{% extends 'appticket/base.html' %}
+
+{% block title %} LIST OF USERS {% endblock %}
+{% block subtitle %} Find below a list of the TicketTool Users. {% endblock %}
+
+{% block button %}
+
+<a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'createuser'%}"> Create User </a>
+
+{% endblock %}
+
+{% block lists %} 
+
+{% for user in users %}
+
+    <p> Name: {{user.name}} - Last Name: {{user.lastname}} - Email: {{user.email}} - Work ID: {{user.workid}}</p> <!-- Make a bullet list-->
+    
+{% endfor %}
+
+{% endblock %}
+

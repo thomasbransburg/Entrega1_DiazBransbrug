@@ -1,0 +1,15 @@
+{% extends 'appticket/base.html' %}
+
+{% block title %} CREATE A STAFF MEMBER {% endblock %}
+{% block subtitle %} Please complete the form below {% endblock %}
+
+
+{% block lists %} 
+
+<form  method="post">{% csrf_token %}
+    {{ staff.as_p }}
+    <input type="submit" value="Submit">
+
+</form>
+
+{% endblock %}

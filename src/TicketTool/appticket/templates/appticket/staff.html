@@ -1,0 +1,18 @@
+{% extends 'appticket/base.html' %}
+
+{% block title %} LIST OF IT TEAM {% endblock %}
+{% block subtitle %} Find below a list of the TicketTool IT Team members. {% endblock %}
+
+{% block button %}
+<a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'createstaff'%}"> Create Staff </a>
+{% endblock %}
+
+{% block lists %} 
+
+{% for member in staff %}
+
+    <p> Name: {{member.name}} - Last Name: {{member.lastname}} - Email: {{member.email}}</p> <!-- Make a bullet list-->
+    
+{% endfor %}
+
+{% endblock %}
